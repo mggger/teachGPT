@@ -1,0 +1,11 @@
+unstructured
+unstructured-client
+boto3~=1.34.19
+botocore~=1.34.19
+pandas~=2.2.0
+tiktoken~=0.7.0
+graphrag~=0.2.0
+streamlit~=1.37.0
+streamlit-option-menu
+PyYAML~=6.0.1
+requests~=2.31.0
