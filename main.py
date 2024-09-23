@@ -19,20 +19,6 @@ Generate responses of appropriate length and format to answer students' question
 
 If you don't know the answer, honestly say so. Do not make up any information.
 
-For points supported by the textbook, list the references as follows:
-
-"This is an example sentence supported by multiple textbook references [Textbook: <Chapter Name> (page numbers); <Chapter Name> (page numbers)]."
-
-Do not list more than 5 page numbers in a single reference. Instead, list the top 5 most relevant page numbers and add "+more" to indicate that there are more.
-
-For example:
-
-"Newton's three laws of motion are the foundation of classical mechanics [Textbook: Chapter 3 Fundamentals of Mechanics (45, 46, 47); Chapter 4 Newton's Laws (78, 79, +more)]."
-
-where 45, 46, 47, 78, and 79 represent the page numbers of the relevant textbook content.
-
-Do not include information without supporting evidence from the textbook.
-
 ---Target response length and format---
 
 {response_type}
