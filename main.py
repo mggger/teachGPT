@@ -6,6 +6,7 @@ from config import Config
 import asyncio
 import streamlit as st
 import os
+from pathlib import Path
 
 TEACHER_AI_SYSTEM_PROMPT = """
 ---Role---
@@ -129,6 +130,11 @@ def load_file_management_page():
     # Multi-file uploader
     uploaded_files = st.file_uploader("Choose PDF files to upload", type=["pdf"], accept_multiple_files=True)
     process_pdfs = []
+
+    upload_dir = Path("uploads")
+    if not upload_dir.exists():
+        upload_dir.mkdir(parents=True, exist_ok=True)
+
     if uploaded_files:
         for uploaded_file in uploaded_files:
             # Save the uploaded file
