@@ -9,8 +9,7 @@ import requests
 import unstructured_client
 from botocore.config import Config as BotoConfig
 from unstructured_client.models import operations, shared
-
-from config import Config
+import logging
 
 
 class PDFProcessor:
@@ -30,6 +29,8 @@ class PDFProcessor:
         )
 
         self.image_count = {}  # To keep track of image count per page
+        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+        self.logger = logging.getLogger(__name__)
 
     def run(self, pdf_path):
         json_elements = self.extract_pdf(pdf_path)
@@ -58,14 +59,20 @@ class PDFProcessor:
 
     @staticmethod
     def html_table_to_markdown(html):
-        markdown = ""
         rows = re.findall(r'<tr.*?>(.*?)</tr>', html, re.DOTALL)
-        for i, row in enumerate(rows):
+        csv_rows = []
+        for row in rows:
             cells = re.findall(r'<t[hd].*?>(.*?)</t[hd]>', row, re.DOTALL)
-            markdown += "| " + " | ".join(cell.strip().replace('\n', ' ') for cell in cells) + " |\n"
-            if i == 0:
-                markdown += "|" + "|".join(["---" for _ in cells]) + "|\n"
-        return markdown
+            # Replace newlines and commas in cell content
+            cleaned_cells = [cell.strip().replace('\n', ' ').replace(',', ';') for cell in cells]
+            csv_rows.append(','.join(cleaned_cells))
+
+        # Combine all rows into a single string
+        csv_content = '\n'.join(csv_rows)
+
+        output = "The CSV table is as follows:\n\n"
+        output += csv_content + "\n"
+        return output
 
     def upload_to_r2(self, image_data, filename):
         self.r2_client.put_object(Bucket=self.config['r2_bucket_name'], Key=filename, Body=image_data)
@@ -130,43 +137,37 @@ class PDFProcessor:
             page_number = metadata['page_number']
             grouped_data[page_number].append(item)
 
-        all_pages_content = []
-
+        all_pages = []
         filename = os.path.basename(pdf_path)
 
-
         for page_number in sorted(grouped_data.keys()):
+            self.logger.info(f"Processing page {page_number} of {filename}")
             page_content = []
-            metadata_line = f"Filename: {filename} | Page: {page_number}, the content is: "
-            page_content.append(metadata_line)
+            title = f"{filename}_{page_number}"
 
             for item in grouped_data[page_number]:
                 if item['type'] == 'NarrativeText':
                     page_content.append(item['text'])
                 elif item['type'] == 'Image':
+                    self.logger.info(f"Processing image on page {page_number}")
                     img_data = base64.b64decode(item['metadata']['image_base64'])
-                    img_filename = self.get_image_filename(os.path.basename(pdf_path), page_number)
+                    img_filename = self.get_image_filename(filename, page_number)
                     img_url = self.upload_to_r2(img_data, img_filename)
                     img_description = self.get_image_description(img_data)
                     page_content.append(f"{img_description}(link: {img_url})")
+                    self.logger.info(f"Image processed and uploaded: {img_url}")
                 elif item['type'] == 'Table':
-                    page_content.append(self.html_table_to_markdown(item['metadata']['text_as_html']))
+                    self.logger.info(f"Processing table on page {page_number}")
+                    markdown_table = self.html_table_to_markdown(item['metadata']['text_as_html'])
+                    page_content.append(markdown_table)
+                    self.logger.info("Table processed and converted to Markdown")
 
-            all_pages_content.append('\n'.join(page_content))
+            all_pages.append({
+                "id": title,
+                "title": filename,
+                "text": '\n'.join(page_content).strip()
+            })
+            self.logger.info(f"Completed processing page {page_number}")
 
-        raw_text = '\n\n'.join(all_pages_content)
-
-        return {
-            "filename": os.path.basename(pdf_path),
-            "doc_content": raw_text.strip()
-        }
-
-
-def main():
-    processor = PDFProcessor(Config)
-    json_elements = processor.extract_pdf("/Users/home/Downloads/10.pdf")
-    processor.process_content(json_elements)
-
-
-if __name__ == "__main__":
-    main()
+        self.logger.info(f"Finished processing all pages of {filename}")
+        return all_pages

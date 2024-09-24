@@ -8,22 +8,19 @@ from graphrag.index.graph.extractors.claims.prompts import CLAIM_EXTRACTION_PROM
 from graphrag.index.graph.extractors.community_reports.prompts import COMMUNITY_REPORT_PROMPT
 from graphrag.index.graph.extractors.graph.prompts import GRAPH_EXTRACTION_PROMPT
 from graphrag.index.graph.extractors.summarize.prompts import SUMMARIZE_PROMPT
-from graphrag.index.progress import PrintProgressReporter
+from graphrag.index.progress import NullProgressReporter
 from graphrag.index.run import run_pipeline_with_config
-from graphrag.index.utils import gen_md5_hash
-from .extract import PDFProcessor
-from config import Config
+from grag_api.extract.pdf_extract import PDFProcessor
 
 
 class GraphRAGIndexer:
     def __init__(self, workspace="ragtest", config=None):
         self.workspace = workspace
         self.config = config
-        self.reporter = PrintProgressReporter("GraphRAG Indexer: ")
+        self.reporter = NullProgressReporter()
         self.dataset_path = Path(self.workspace) / "dataset.parquet"
         self.index_file_path = Path(self.workspace) / "_index"
         self._check_and_init()
-        self.pdf_processer = PDFProcessor(Config)
 
     def _check_and_init(self):
         root = Path(self.workspace)
@@ -68,63 +65,10 @@ class GraphRAGIndexer:
             f.write(timestamp)
         self.reporter.info(f"Updated index timestamp: {timestamp}")
 
-    def _process_documents(self, documents):
-        processed_docs = []
-        for doc in documents:
-            doc_data = {
-                "text": doc['doc_content'],
-                "title": doc['filename'],
-            }
-            doc_data["id"] = gen_md5_hash(doc_data, doc_data.keys())
-            processed_docs.append(doc_data)
-        return pd.DataFrame(processed_docs)
+    async def run(self, dataset):
+        await self._ainsert(dataset)
 
-    def _read_dataset(self):
-        if self.dataset_path.exists():
-            return pd.read_parquet(self.dataset_path)
-        return pd.DataFrame(columns=["id", "text", "title"])
-
-    def _write_dataset(self, df):
-        df.to_parquet(self.dataset_path, index=False)
-
-    def _update_dataset(self, new_docs):
-        existing_df = self._read_dataset()
-        new_df = pd.concat([existing_df, new_docs], ignore_index=True)
-
-        # Check for duplicates
-        duplicates = new_df[new_df.duplicated(subset=["title"], keep=False)]
-        if not duplicates.empty:
-            duplicate_files = duplicates['title'].unique().tolist()
-            self.reporter.info(f"Duplicate files detected: {', '.join(duplicate_files)}")
-            new_df.drop_duplicates(subset=["title"], keep="first", inplace=True)
-
-        self._write_dataset(new_df)
-        return new_df, duplicates
-
-    async def insert_pdf(self, pdf_path):
-        if isinstance(pdf_path, str):
-            pdf_paths = [pdf_path]
-        else:
-            pdf_paths = pdf_path
-
-        documents = []
-        existing_dataset = self._read_dataset()
-        existing_filenames = set(existing_dataset['title'])
-
-        for pdf_path in pdf_paths:
-            filename = Path(pdf_path).name
-            if filename in existing_filenames:
-                self.reporter.info(f"Skipping {filename} as it has already been processed.")
-                continue
-
-            document = self.pdf_processer.run(pdf_path)
-            documents.append(document)
-            self.reporter.info(f"Successfully processed: {pdf_path}")
-
-        if documents:
-            await self._ainsert(documents)
-
-    async def _ainsert(self, documents):
+    async def _ainsert(self, dataset):
         output_dir = Path(self.workspace) / "output" / "graph"
         output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -137,15 +81,6 @@ class GraphRAGIndexer:
 
         pipeline_config.storage.base_dir = str(output_dir / "artifacts")
         pipeline_config.reporting.base_dir = str(output_dir / "reports")
-
-        new_docs = self._process_documents(documents)
-        dataset, duplicates = self._update_dataset(new_docs)
-
-        if not duplicates.empty:
-            duplicate_files = duplicates['title'].unique().tolist()
-            self.reporter.info(
-                f"The following files already exist and will not be reprocessed: {', '.join(duplicate_files)}")
-            return
 
         async for output in run_pipeline_with_config(
                 pipeline_config,

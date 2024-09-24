@@ -80,9 +80,9 @@ By default, all relevant images and tables should be displayed without requiring
 """
 
 
-grag = GraphRAG(api_key=Config['openai_api_key'])
+grag = GraphRAG()
 def load_chat_page():
-    st.title("AI Teacher Assistant Chatbot")
+    st.title("GraphRAG PDF Assistant Chatbot")
     if "messages" not in st.session_state or st.sidebar.button("Clear message history"):
         st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
@@ -101,7 +101,7 @@ def load_chat_page():
             streamlit_callback = StreamlitLLMCallback()
 
             async def perform_search():
-                res = await grag.aquery(user_query, system_prompt=TEACHER_AI_SYSTEM_PROMPT, callbacks=[streamlit_callback])
+                res = await grag.aquery(user_query, system_prompt=AI_SYSTEM_PROMPT, callbacks=[streamlit_callback])
                 return res
 
             with st.spinner("Searching for an answer..."):
@@ -115,34 +115,26 @@ def load_file_management_page():
 
     # Multi-file uploader
     uploaded_files = st.file_uploader("Choose PDF files to upload", type=["pdf"], accept_multiple_files=True)
-    process_pdfs = []
 
     upload_dir = Path("uploads")
     if not upload_dir.exists():
         upload_dir.mkdir(parents=True, exist_ok=True)
 
+    cnt = 0
     if uploaded_files:
-        for uploaded_file in uploaded_files:
-            # Save the uploaded file
-            file_path = os.path.join("uploads", uploaded_file.name)
-            if os.path.exists(file_path):
-                st.warning(f"File {uploaded_file.name} already exists. Skipping upload.")
-            else:
+        with st.spinner("Upload files..."):
+            for uploaded_file in uploaded_files:
+                # Save the uploaded file
+                file_path = os.path.join("uploads", uploaded_file.name)
                 with open(file_path, "wb") as f:
                     f.write(uploaded_file.getbuffer())
-
-                process_pdfs.append(file_path)
-
-    async def perform_train(pdfs):
-        await grag.insert_pdf(pdfs)
-
-    with st.spinner("Start Training..."):
-        asyncio.run(perform_train(process_pdfs))
-
+                grag.upsert_pdf(file_path)
+                cnt += 1
+        st.success(f"Successfully uploaded {cnt} new file(s).")
     st.divider()
 
     st.subheader("Uploaded Files")
-    uploaded_files = os.listdir("uploads")
+    uploaded_files = grag.get_all_files()
     if not uploaded_files:
         st.info("No files uploaded yet.")
     else:
@@ -150,14 +142,39 @@ def load_file_management_page():
             col1, col2 = st.columns([3, 1])
             with col1:
                 st.write(file)
+            with col2:
+                if st.button("Delete", key=f"delete_{file}"):
+                    grag.delete_pdf(file)
+                    st.success(f"Deleted {file}")
+
+
+def train_page():
+    st.title("Training Data")
+    last_training_time = grag.get_last_training_time()
+    if last_training_time:
+        st.info(f"Last training time: {last_training_time}")
+    else:
+        st.info("No previous training recorded")
+
+    st.write("Click the button below to begin training.")
+
+    st.write("Click the button below to begin training.")
+
+    if st.button("Start Training"):
+        with st.spinner("Training in progress..."):
+            try:
+                asyncio.run(grag.aindex())
+                st.success("Training completed successfully!")
+            except Exception as e:
+                st.error(f"An error occurred during training: {str(e)}")
 
 
 def main():
     with st.sidebar:
         selected = option_menu(
             "Main Menu",
-            ["Chat", "File Management"],
-            icons=["chat", "folder"],
+            ["Chat", "File Management", "Train"],
+            icons=["chat", "folder", ""],
             menu_icon="cast",
             default_index=0,
         )
@@ -166,6 +183,9 @@ def main():
         load_chat_page()
     elif selected == "File Management":
         load_file_management_page()
+    elif selected == "Train":
+        train_page()
+
 
 if __name__ == "__main__":
     st.markdown("""

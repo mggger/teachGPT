@@ -1,10 +1,19 @@
 import copy
+import os
 
 DEFAULT_CONFIG = {
+    "unstructured_api_endpoint":  os.environ.get("UNSTRUCTURED_API_ENDPOINT"),
+    "unstructured_api_key": os.environ.get("UNSTRUCTURED_API_KEY"),
+    "r2_access_key": os.environ.get("R2_ACCESS_KEY"),
+    "r2_secret_key": os.environ.get("R2_SECRET_KEY"),
+    "r2_endpoint_url": os.environ.get("R2_ENDPOINT_URL"),
+    "r2_bucket_name": os.environ.get("R2_BUCKET_NAME"),
+    "r2_public_url": os.environ.get("R2_PUBLIC_URL"),
+    "openai_api_key": os.environ.get("OPENAI_API_KEY"),
     "encoding_model": "cl100k_base",
     "skip_workflows": [],
     "llm": {
-        "api_key": 'sk-xx',
+        "api_key": os.environ.get("OPENAI_API_KEY"),
         "type": "openai_chat",
         "model": "gpt-4o-mini",
         "model_supports_json": True,
@@ -16,7 +25,7 @@ DEFAULT_CONFIG = {
     "embeddings": {
         "async_mode": "threaded",
         "llm": {
-            "api_key": 'sk-xx',
+            "api_key": os.environ.get("OPENAI_API_KEY"),
             "type": "openai_embedding",
             "model": "text-embedding-3-small",
             "max_tokens": 8192,
@@ -97,10 +106,13 @@ def load_config(api_key=None):
     config = copy.deepcopy(DEFAULT_CONFIG)
 
     if api_key is not None:
+        config['openai_api_key'] = api_key
+
         # Replace the API key in the main LLM configuration
         config['llm']['api_key'] = api_key
 
         # Replace the API key in the embeddings LLM configuration
         config['embeddings']['llm']['api_key'] = api_key
+
 
     return config
