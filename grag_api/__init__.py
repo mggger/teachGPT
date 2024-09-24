@@ -14,6 +14,7 @@ class GraphRAG:
         self.querier = GraphRAGQuerier(workspace, config=config)
         self.db = DB()
         self.pdf_processor = PDFProcessor(config)
+        self.workspace = workspace
 
     def upsert_pdf(self, pdf_path):
         pdf_data = self.pdf_processor.run(pdf_path)
