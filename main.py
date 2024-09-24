@@ -2,7 +2,6 @@ from streamlit_option_menu import option_menu
 
 from callback import StreamlitLLMCallback
 from grag_api import GraphRAG
-from config import Config
 import asyncio
 import streamlit as st
 import os
@@ -82,7 +81,7 @@ By default, all relevant images and tables should be displayed without requiring
 
 grag = GraphRAG()
 def load_chat_page():
-    st.title("GraphRAG PDF Assistant Chatbot")
+    st.title("AI Teacher Assistant Chatbot")
     if "messages" not in st.session_state or st.sidebar.button("Clear message history"):
         st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
@@ -101,7 +100,7 @@ def load_chat_page():
             streamlit_callback = StreamlitLLMCallback()
 
             async def perform_search():
-                res = await grag.aquery(user_query, system_prompt=AI_SYSTEM_PROMPT, callbacks=[streamlit_callback])
+                res = await grag.aquery(user_query, system_prompt=TEACHER_AI_SYSTEM_PROMPT, callbacks=[streamlit_callback])
                 return res
 
             with st.spinner("Searching for an answer..."):
