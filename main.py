@@ -157,8 +157,6 @@ def train_page():
 
     st.write("Click the button below to begin training.")
 
-    st.write("Click the button below to begin training.")
-
     if st.button("Start Training"):
         with st.spinner("Training in progress..."):
             try:
