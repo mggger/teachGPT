@@ -5,7 +5,7 @@ from .db import DB
 from grag_api.extract.json_extract import process_json_content
 from grag_api.extract.pdf_extract import PDFProcessor
 import os
-import datetime
+from datetime import datetime
 
 class GraphRAG:
     def __init__(self, workspace="ragtest", api_key=None):
