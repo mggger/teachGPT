@@ -1,3 +1,6 @@
+import csv
+import io
+
 from streamlit_option_menu import option_menu
 
 from callback import StreamlitLLMCallback
@@ -6,6 +9,7 @@ import asyncio
 import streamlit as st
 import os
 from pathlib import Path
+from agent.quesion import QuestionAgent
 
 TEACHER_AI_SYSTEM_PROMPT = """
 ---Role---
@@ -166,12 +170,71 @@ def train_page():
                 st.error(f"An error occurred during training: {str(e)}")
 
 
+def load_csv_analysis_page():
+    st.title("Assignment Analysis")
+    st.write("Upload a assignment containing answers for analysis.")
+
+    uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+
+    if uploaded_file is not None:
+        # Read CSV content
+        csv_content = uploaded_file.getvalue().decode("utf-8")
+        csv_data = list(csv.DictReader(io.StringIO(csv_content)))
+
+        if st.button("Analyze Answers"):
+            with st.spinner("Analyzing answers..."):
+                try:
+                    # Initialize QuestionAgent
+
+                    agent = QuestionAgent(grag, api_key=os.environ.get("OPENAI_API_KEY"))
+
+                    # Process CSV data
+                    results = asyncio.run(agent.process_csv(csv_data))
+
+                    # Calculate statistics
+                    total_questions = len(results)
+                    correct_answers = sum(1 for result in results if result['correct'])
+                    score = (correct_answers / total_questions) * 100
+
+                    # Display results
+                    st.subheader("Analysis Results")
+                    col1, col2, col3 = st.columns(3)
+                    col1.metric("Total Questions", total_questions)
+                    col2.metric("Correct Answers", correct_answers)
+                    col3.metric("Score", f"{score:.2f}%")
+
+                    # Generate and display AI feedback
+                    feedback = asyncio.run(agent.summary_results_and_feedback(results))
+                    st.subheader("AI Tutor Feedback")
+                    st.markdown(f"""
+                                <div style="border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
+                                    {feedback}
+                                </div>
+                                """, unsafe_allow_html=True)
+
+                    # Display correct and incorrect questions
+                    st.subheader("Question Details")
+                    incorrect_questions = [result for result in results if not result['correct']]
+                    if incorrect_questions:
+                        for i, result in enumerate(incorrect_questions, 1):
+                            with st.expander(f"Question {i}"):
+                                st.write(f"**Question:** {result['question']}")
+                                st.write(f"**Reason for incorrectness:** {result['reason']}")
+                    else:
+                        st.success("Congratulations! All questions were answered correctly.")
+                except Exception as e:
+                    st.error(f"An error occurred during analysis: {str(e)}")
+                    raise e
+    else:
+        st.info("Please upload a CSV file to begin the analysis.")
+
+
 def main():
     with st.sidebar:
         selected = option_menu(
             "Main Menu",
-            ["Chat", "File Management", "Train"],
-            icons=["chat", "folder", ""],
+            ["Chat", "File Management", "Train", "Assignment Analysis"],
+            icons=["chat", "folder", "", "file-earmark-text"],
             menu_icon="cast",
             default_index=0,
         )
@@ -182,7 +245,8 @@ def main():
         load_file_management_page()
     elif selected == "Train":
         train_page()
-
+    elif selected == "Assignment Analysis":
+        load_csv_analysis_page()
 
 if __name__ == "__main__":
     st.markdown("""

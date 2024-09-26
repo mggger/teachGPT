@@ -1,7 +1,7 @@
 import time
 from pathlib import Path
+
 import yaml
-import pandas as pd
 from graphrag.config import create_graphrag_config
 from graphrag.index import PipelineConfig, create_pipeline_config
 from graphrag.index.graph.extractors.claims.prompts import CLAIM_EXTRACTION_PROMPT
@@ -10,7 +10,6 @@ from graphrag.index.graph.extractors.graph.prompts import GRAPH_EXTRACTION_PROMP
 from graphrag.index.graph.extractors.summarize.prompts import SUMMARIZE_PROMPT
 from graphrag.index.progress import NullProgressReporter
 from graphrag.index.run import run_pipeline_with_config
-from grag_api.extract.pdf_extract import PDFProcessor
 
 
 class GraphRAGIndexer:
@@ -29,6 +28,10 @@ class GraphRAGIndexer:
             self._init()
         else:
             self.reporter.info("Found existing workspace.")
+            root = Path(self.workspace)
+            settings_yaml = root / "settings.yaml"
+            with settings_yaml.open("w") as file:
+                yaml.dump(self.config, file, default_flow_style=False, sort_keys=False)
 
     def _init(self):
         self.reporter.info(f"Initializing project at {self.workspace}")
@@ -54,10 +57,6 @@ class GraphRAGIndexer:
             if not file_path.exists():
                 with file_path.open("wb") as file:
                     file.write(content.encode(encoding="utf-8", errors="strict"))
-
-        if not self.dataset_path.exists():
-            empty_df = pd.DataFrame(columns=["id", "text", "title"])
-            empty_df.to_parquet(self.dataset_path)
 
     def _update_index(self):
         timestamp = str(int(time.time()))
