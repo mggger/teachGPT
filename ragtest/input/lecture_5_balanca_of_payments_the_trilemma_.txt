@@ -1,0 +1,11 @@
+lecture_5__balanca_of_payments.md - The “Trilemma”
+
+Assumes UIRP holds  
+
+Trilemma says that a country can have 2 out of 3 things but  never all 3  
+
+For example, if the exchange rate is fixed and the capital  account is open, a country gives up its monetary policy  (example Eurozone countries or countries with currency pegs).  
+
+Why? If the currency is pegged (or same currency), if interest  rates across countries differ, there will be infinite inflows by  investors trying to exploit the risk free arbitrage, up to the  point where inflation pressure skyrockets (unsustainable)  
+
+Historical advice of IMF to emerging markets: in order to have  independent monetary policy and open capital account, allow  your currency to be free floating

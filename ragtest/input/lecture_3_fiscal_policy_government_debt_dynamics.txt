@@ -1,0 +1,13 @@
+lecture_3_fiscal_policy.md - Government Debt Dynamics
+
+• Government Budget Constraint (assume only short-term debt/one period debt)  
+
+$$
+G_{t}-T_{t}+D_{t-1}^{S}=P_{t}^{S}D_{t}^{S}\;.
+$$  
+
+$D_{t}^{S}$   $t,$   $t+1$  
+
+$G_{t}-T_{t}$   $P_{t}^{S}-$   $i_{t}^{S}-$   $t$   $\begin{array}{r}{P_{t}^{S}=\frac{1}{\big(1+i_{t}^{S}\big)}}\end{array}$  
+
+$Y_{t}\,=\,\bigl(1+g_{t}\bigr)Y_{t}$

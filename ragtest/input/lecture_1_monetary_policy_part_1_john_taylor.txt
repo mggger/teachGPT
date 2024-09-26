@@ -1,0 +1,7 @@
+lecture_1_monetary_policy_part_1.md - John Taylor
+
+![The graph compares the actual Federal Funds Rate (dashed black line) and the Taylor Rule using GDP deflator (solid green line) from 1993 to 2015, showing trends and divergence.](https://lblc.cc/8b0abb537e65b7150f308c736898e4b547027f19d899f6b3ccc5842c9d3ce406.jpg) 
+
+• “Lift off” (interest rate increase) should have been sooner
+
+•  Fed Funds rate was too low between 2003 – 2005 fuelling the real estate bubble.

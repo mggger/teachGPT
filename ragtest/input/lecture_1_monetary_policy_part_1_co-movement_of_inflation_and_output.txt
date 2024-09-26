@@ -1,0 +1,5 @@
+lecture_1_monetary_policy_part_1.md - Co-movement of inflation and output
+
+Supply shocks lead to negative correlation between  inflation and output (when inflation is high, output is  low)  
+
+Demand shocks lead to a positive correlation between  inflation and output (when inflation is low, output is  low)

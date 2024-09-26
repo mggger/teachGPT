@@ -1,0 +1,5 @@
+lecture_4_exchange_rates.md - Monetary Policy and Exchange Rates
+
+![The image displays four graphs comparing exchange rates and relative yields for CHF-USD and DEM-USD from 1990 to 2015, highlighting trends and fluctuations over time.](https://lblc.cc/83809c98211683de6ad9807b9fd7d35b47c4e0d9e4cf3bf67b5555c0c36fe6e9.jpg) 
+
+Source: Stavrakeva and Tang (2015); Relative rates defined as country i minus the US

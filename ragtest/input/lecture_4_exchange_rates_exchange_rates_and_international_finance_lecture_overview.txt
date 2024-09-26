@@ -1,0 +1,7 @@
+lecture_4_exchange_rates.md - Exchange Rates and International  Finance Lecture: Overview
+
+A. Nominal Exchange Rates  
+
+B. Uncovered Interest Rate Parity (UIRP)   (No Arbitrage Condition in Financial Markets)  
+
+C. Real Exchange Rates and Purchasing Power Parity  (No Arbitrage Condition in Goods Markets)

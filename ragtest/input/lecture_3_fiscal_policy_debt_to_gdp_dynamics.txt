@@ -1,0 +1,11 @@
+lecture_3_fiscal_policy.md - Debt to GDP Dynamics
+
+• Government Budget Constraint:  
+
+$$
+G_{t}-T_{t}+D_{t-1}^{S}=P_{t}^{S}D_{t}^{S}
+$$  
+
+• Divide by GDP and simplify:  
+
+![The image displays a series of mathematical equations and expressions related to financial dynamics, likely focusing on government expenditure (G), taxation (T), and debt dynamics over time.](https://lblc.cc/3b238ac957c8a55e2cd202eed4e884a53d3bf0e6677bbade4e311d5beb9c0ae1.jpg)

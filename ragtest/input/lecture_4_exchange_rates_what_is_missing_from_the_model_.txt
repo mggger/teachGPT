@@ -1,0 +1,11 @@
+lecture_4_exchange_rates.md - What is Missing From the Model?
+
+“Augmented” UIRP equation that takes into account  compensation for risk (the currency risk premium)  
+
+The average profits from the carry strategy equal the currency  risk premium  
+
+![The image depicts a mathematical equation involving logarithmic change, indexed variables, and constants, suggesting a relationship in a scientific or statistical context.](https://lblc.cc/affd28623acdff27ff233b7256e2ad35569e38cb18b8a8fa135a6caa4b515f6b.jpg) 
+
+Expected excess returns for a UK  investor from being long the UK  government bond and short the  German government bond  (average profits from carry trade)  
+
+The Currency Risk Premium is a function of the covariance  of the carry returns with the  stock market, among other  things

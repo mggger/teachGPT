@@ -1,0 +1,13 @@
+lecture_1_monetary_policy_part_1.md - Summary
+
+•  Business cycles are driven by supply and demand shocks  
+
+•  Monetary policy  
+
+–  is conducted by Central Banks –  consists of the use of instruments to stabilize inflation and  achieve “full” employment  
+
+•  Monetary policy can “smooth” demand shocks but not supply  shocks when policy rates aren’t at the zero lower bound  
+
+•  Monetary policy affects real variables in the short run but not  in the long run  
+
+•  CBs’ policy can be captured by a Taylor Rule

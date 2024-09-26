@@ -1,0 +1,11 @@
+lecture_4_exchange_rates.md - What is Missing From the Model? (extra  slide)
+
+Compensation for risk – returns from the carry trade crash  when investors need money – positive beta (example: financial  crisis)
+
+The UIRP theory assumes that investors are risk neutral (don’t  care about risk) – unrealistic assumption
+
+However, even if we assume that investors dislike risk but  have constant currency risk premium, still cannot match the  data
+
+In order to match the data, currency risk premium must be  time varying and correlated with period t interest rate  differentials
+
+Understanding how and why those two variables co-move is  crucial in order to understand exchange rates

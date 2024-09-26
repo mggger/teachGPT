@@ -1,0 +1,11 @@
+lecture_4_exchange_rates.md - UIRP
+
+Testing UIRP implies testing the following two hypotheses:  
+
+UIRP predicts that the currency with higher interest rate should  depreciate on average  
+
+$$
+\triangle\ln e_{1}^{e}=\ln e_{1}^{e}-\ln e_{0}=i_{0}^{G}-\imath
+$$  
+
+UIRP predicts that there are no excess returns on average (the  expected excess return is zero) from borrowing in the country with low  interest rate and investing in the country with high interest rate  (this  investment strategy is known as the “carry” trade)

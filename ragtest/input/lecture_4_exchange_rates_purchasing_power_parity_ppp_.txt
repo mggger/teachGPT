@@ -1,0 +1,13 @@
+lecture_4_exchange_rates.md - •  Purchasing Power Parity (PPP)
+
+–  the same good (basket of goods) should sell for the same  price wherever it is sold (after converting into common  currency).  
+
+•  PPP  holding imply that the RER is always equal to 1 !   $\begin{array}{r}{R E R^{U K}=\frac{e*P^{p o u n d}}{P^{e u r o}}=1)\;(\mathrm{every~strong}\;)}\end{array}$  ) (very strong prediction) Why would we expect PPP to hold? (extra slide)  
+
+If PPP does not hold, there is arbitrage in the goods market  
+
+•  If the price for the same good is lower in the UK relative to the  Eurozone, one can buy the good in the UK and export it to the  Eurozone  
+
+•  This will increase the price of the good in the UK due to lower  supply of the good and decrease the price in the Eurozone due  to larger supply  
+
+And/or  pound sterling will appreciate since there will be  higher demand for pounds in order to purchase the good in the  UK

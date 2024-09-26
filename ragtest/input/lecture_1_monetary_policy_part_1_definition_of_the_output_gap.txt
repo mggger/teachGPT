@@ -1,0 +1,7 @@
+lecture_1_monetary_policy_part_1.md - Definition of the Output Gap
+
+A cycle is made of an expansion (boom) and a contraction (recession)  
+
+![The graph depicts the output gap over time from 1980 to 2020, showing fluctuations above and below zero, indicating periods of economic expansion and contraction.](https://lblc.cc/4782ce4030fa715490032370a0973939bd17ed4b805ae96f5844044c8f24c292.jpg) 
+
+Output Gap=100*(Real GDP – Potential GDP)/Potential GDP

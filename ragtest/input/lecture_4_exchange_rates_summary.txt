@@ -1,0 +1,7 @@
+lecture_4_exchange_rates.md - Summary
+
+•  Exchange rates are driven by supply=demand but also by no  arbitrage conditions (UIRP and PPP)  
+
+No arbitrage condition  in asset markets --- UIRP theory ; the  UIRP theory is violated (we see positive returns from the carry  trade) but the violation is explained with compensation for risk  for “carry” since “carry” unravels in crisis times  
+
+•  No arbitrage condition  in goods markets --- PPP theory; the  PPP holds in medium/long run but not in the short run

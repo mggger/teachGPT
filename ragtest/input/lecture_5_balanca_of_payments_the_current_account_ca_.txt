@@ -1,0 +1,11 @@
+lecture_5__balanca_of_payments.md - The Current Account (CA)
+
+•  GNI =  C + I + G +  CA  
+
+•  GNI is total income of domestic residents. They either  consume it, save it or pay it as taxes: GNI=C + S + T  
+
+•  Hence:  $\mathrm{C}+\mathrm{I}+\mathrm{G}+\mathrm{CA}=\mathrm{C}+\mathrm{S}+\mathrm{T}$  
+
+$\mathrm{range:CA}+\underset{\mathrm{\tiny~\textcent~}}{\underbrace{(\mathrm{I}\cdot\mathrm{S})+(\mathrm{G}\cdot\mathrm{T})}}=0$  
+
+Private needs for funds  $+$   Public needs for funds  $=$  Total borrowing from foreigners

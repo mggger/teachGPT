@@ -1,0 +1,13 @@
+lecture_4_exchange_rates.md - Real Exchange Rate
+
+$$
+\begin{array}{r}{R E R^{U K}=\frac{e*P^{p o u n d}}{P^{e u r o}}}\end{array}
+$$  
+
+•  e – nominal exchange rate;  euros per pound  
+
+•  Higher e implies that the pound appreciates in nominal terms  and,  holding relative prices constant , the RER appreciates too  
+
+𝑝𝑝𝑝𝑝𝑝𝑝𝑝𝑝𝑝𝑝
+
+•  Higher prices in the UK relative to the Eurozone, higher  𝑃𝑃   ,  𝑃𝑃 𝑒𝑒𝑒𝑒𝑒𝑒𝑒𝑒 holding the nominal exchange rate constant , implies that the  real exchange rate appreciates

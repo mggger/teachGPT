@@ -1,0 +1,15 @@
+lecture_5__balanca_of_payments.md - Balance Of Payments
+
+•  Balance of Payment:  
+
+CA  +  KA  = 0  
+
+KA= (I – S) + (G –T) CA=TB+NFI  
+
+Example  
+
+–  Assume net foreign income is 0  
+
+–  If the trade balance is negative, in the current period, the residents  and the government consume more than they produce (import more  than they export) and CA&lt;0  
+
+–  In order to be able to purchase these foreign goods, the residents  and/or the government need to borrow from foreigners  (i.e. negative  CA has to be offset by positive KA)

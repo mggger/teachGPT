@@ -1,0 +1,13 @@
+lecture_4_exchange_rates.md - Relationship between nominal
+
+exchange rate changes and inflation  
+
+•  Re-writing the PPP equation one can show that  
+
+Changes in nominal exchange rate = inflation differential  
+
+•  That is, if PPP holds (RER=1),  a country with relatively  lower inflation will see its nominal exchange rate  appreciate  
+
+•  And the other way round!  
+
+![The image features a triangular yellow warning sign with a black exclamation mark and dot in the center, indicating caution or alertness.](https://lblc.cc/c9820b4fdd0f7a01eb8befa256a2da3cc721dacc247146c2bcb31d0cb984aa83.jpg)

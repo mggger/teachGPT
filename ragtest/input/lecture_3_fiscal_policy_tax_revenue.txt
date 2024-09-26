@@ -1,0 +1,3 @@
+lecture_3_fiscal_policy.md - Tax Revenue
+
+![The image depicts a graph illustrating the relationship between tax rates and revenue. It highlights a maximum tax rate (\(t_{max}\)) above which tax cuts can increase revenue.](https://lblc.cc/cdb0993bd21fe722c3f44a7906bcd25294138d6419d153f641a65a9f7d9dc366.jpg)

@@ -1,0 +1,13 @@
+lecture_4_exchange_rates.md - Exchange rate --  the price of a currency relative to  another
+
+![The image displays a foreign exchange table from May 22, 2015, showing exchange rates of various currencies against the US Dollar.](https://lblc.cc/5a8c7e95326ba38f344170d575eeddb7f07e596420bc396adcffdab73b6a0c9d.jpg) 
+
+Classification of Exchange Rates  
+
+•  Free floats (2012: 50 out of 183 countries)  
+
+•  Peg (2012: 88 out of 183 countries)  
+
+•  No Legal Tender (use the currency of another  country) (2012: 45 out of 183 countries)  
+
+Source: “Classifying Exchange Rate Regimes by Regression Methods” Bleaney and Tian (2014)

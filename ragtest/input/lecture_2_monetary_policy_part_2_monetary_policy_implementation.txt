@@ -1,0 +1,3 @@
+lecture_2_monetary_policy_part_2.md - Monetary Policy Implementation
+
+•  CBs use other instruments too to ensure that  lower/higher policy rates transmit to the real economy  by generating more/less lending:

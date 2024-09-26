@@ -1,0 +1,7 @@
+lecture_2_monetary_policy_part_2.md - Forward Guidance and Time Inconsistency
+
+Time Inconsistency – CBs have the incentive to break their  promise of keeping rates low in the future if inflation exceeds  its target – i.e. what CBs say now their policy rate will be in  the future might be  inconsistent  with the actual policy rate they  end up choosing  
+
+If markets don’t believe the CB due to this time inconsistency,  there will be little or no impact on long term rates when the  statement is made  
+
+Important that the CB sticks to promises –  otherwise forward  guidance less effective in the future (people are smart!).

@@ -1,0 +1,11 @@
+lecture_1_monetary_policy_part_1.md - Ben Bernanke
+
+![The graph displays the Actual Fed Funds Rate (dashed black line) and the Taylor Rule using Core PCE Inflation (solid green line) from 1993 to 2015, highlighting economic trends.](https://lblc.cc/465f9ac7ed6e55a4b80ee143060d5f96026b4007038bb950141e44bf54be2d14.jpg) 
+
+Updated Taylor Rule US  
+
+![The image shows a time series line graph with three fluctuating lines over the years from 1990 to 2025, depicting varying values and trends, particularly notable changes around 2020.](https://lblc.cc/59b1cfbe405f2540645dd3bb876eeaf2076ec2a83b6239e9b5a85e9866c1cb6f.jpg) 
+
+$3.9{+}1.36^{\star}(\$  
+
+Which Taylor Rule would you use,  if any?

@@ -1,0 +1,5 @@
+lecture_4_exchange_rates.md - Inflation and Currency Movements
+
+![The image showcases two scatter plots. The top illustrates depreciation against the USD versus inflation differential, while the bottom depicts a similar relationship with a different range, both featuring trend lines.](https://lblc.cc/17f4038fe6a8d40806ca6292765cfe730df45dbbc847b64d23af405080d41a07.jpg) 
+
+![The image displays scatter plots for different time windows (1, 5, and 20 years), illustrating trends with data points and regression lines indicating relationships over time.](https://lblc.cc/17716b25ac87df0270ac58cef1391cb51a4473d47a0b0d5d2317edda2a45b243.jpg)

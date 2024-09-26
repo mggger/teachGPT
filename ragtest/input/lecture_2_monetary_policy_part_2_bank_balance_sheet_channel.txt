@@ -1,0 +1,3 @@
+lecture_2_monetary_policy_part_2.md - Bank balance sheet channel
+
+By purchasing non liquid/non safe assets from banks, CBs removed illiquid/risky assets  from the banks’ balance sheet freeing up “valuable” bank capital (due to binding  minimum bank capital requirements) to be used for new loans

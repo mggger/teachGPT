@@ -1,0 +1,3 @@
+lecture_4_exchange_rates.md - Japanese Effective Exchange Rate
+
+![The graph displays two lines representing nominal (blue) and real (red) values from 1970 to 2008, illustrating significant divergence and trends over time.](https://lblc.cc/344024b9c27f3d2701875d86fc70c4cc49eff99e7cd979f99c3c7fa356bf3245.jpg)

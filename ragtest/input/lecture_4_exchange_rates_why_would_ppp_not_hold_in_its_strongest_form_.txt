@@ -1,0 +1,13 @@
+lecture_4_exchange_rates.md - Why would PPP not hold in its strongest form?
+
+Transportation costs  
+
+CPI baskets differ across countries  
+
+Non Tradable Goods – the RER is usually calculated using  CPI index which contains both tradable and non-tradable  goods  (PPP will not hold for non-tradable goods since the price e qui lib rating  mechanism is due to the ability to trade the good)  
+
+\$/£ Normalized Real exchange  rate  
+
+![The image depicts a line graph showing fluctuations in a measure related to purchasing power parity (PPP) from 1979 to 2009, questioning why PPP does not hold in the short/medium run.](https://lblc.cc/4ed1c0611427bed51cbbb3d07b38d38724abcb486209f710c2b3262f8cbac991.jpg)
+
+Source: IFS 2011 (IMF),  normalized  by sample average

@@ -37,8 +37,9 @@ class GraphRAG:
         dataset = self.db.load_data()
         await self.indexer.run(dataset)
 
-    async def aquery(self, question, callbacks=[], system_prompt=None):
-        return await self.querier.query(question, callbacks=callbacks, system_prompt=system_prompt)
+    async def aquery(self, question, conversation_history=None, callbacks=[], system_prompt=None):
+        return await self.querier.query(question, conversation_history=conversation_history,
+                                        callbacks=callbacks, system_prompt=system_prompt)
 
     def get_last_training_time(self):
         index_file_path = os.path.join(self.workspace, "_index")

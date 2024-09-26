@@ -1,0 +1,13 @@
+lecture_4_exchange_rates.md - Uncovered Interest Rate Parity (UIRP)
+
+The trade-off for a British investor  
+
+$(1+i_{0})$   $(1+i_{0}^{G})\frac{e_{0}}{e_{1}^{\epsilon}}$  
+
+$e_{0}-t=0$  
+
+$t=1$   $i_{0}$  
+
+$\begin{array}{l l l}{{\displaystyle\mathrm{if}\ \left(1+i_{0}\right)}}&amp;{{&gt;}}&amp;{{(1+i_{0}^{G})\frac{e_{0}}{e_{1}^{e}}\ \mathrm{invert\in\UK\bond}}}\ {{\displaystyle\mathrm{if}\ \left(1+i_{0}\right)}}&amp;{{&lt;}}&amp;{{(1+i_{0}^{G})\frac{e_{0}}{e_{1}^{e}}\ \mathrm{invert\in\Gett{Man}\ \backslash i_{0}\ \mathrm{.}}}}\end{array}$  
+
+Trading  Strategy

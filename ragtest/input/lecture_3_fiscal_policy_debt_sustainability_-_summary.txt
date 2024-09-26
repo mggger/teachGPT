@@ -1,0 +1,5 @@
+lecture_3_fiscal_policy.md - Debt Sustainability - Summary
+
+• Shifts in interest rates,  i ,  and growth rates,  g ,  have big impact on government debt  dynamics  
+
+Feedback loop: If  i  increases and higher  i leads to lower  g , then countries can rapidly  find their public finances deteriorating

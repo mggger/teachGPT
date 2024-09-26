@@ -1,0 +1,9 @@
+lecture_4_exchange_rates.md - Monetary Policy and Exchange Rates  (extra slide)
+
+• If period   $t$   relative interest rates failed to explain the future movement of the  exchange rate (between t and  $\mathsf{t}!+!1\,,$  ), then does monetary policy matter for exchange  rates?  
+
+The answer is YES  –the relationship that matters is between  exchange rate changes  and  changes  in long term/short term interest rate differentials; in other words, it’s  period  $_{\dag+1}$   policy rates that drive the change in exchange rates between t and t+1  (optional: for details see  Stavrakeva and Tang (2015));  
+
+Example: The theory predicts that if the FED increases its interest rate  relative to the ECB, the dollar will appreciate instantaneously against the  euro. This prediction is strongly confirmed by the data  
+
+• Contrast with UIRP which links todays exchange rate change to past policy  rate

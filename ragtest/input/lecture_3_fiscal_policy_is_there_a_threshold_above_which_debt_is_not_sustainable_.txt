@@ -1,0 +1,11 @@
+lecture_3_fiscal_policy.md - Is there a threshold above which debt is not sustainable?
+
+Historically, very few countries sustained high levels of debt to GDP  (above   $90\%$   or so) but countries differ.  
+
+Factors to consider: 1) Who holds the debt (Japan)  
+
+2) Ability of the government to collect taxes  
+
+3) What are the implicit government guarantees (low official debt to  GDP but high implicit government guarantees can be bad too)  
+
+4) Last, but not least, the key variables that determine the debt  sustainability of a country are given in the theory of Debt  Sustainability (see the following slides)

@@ -1,0 +1,13 @@
+lecture_1_monetary_policy_part_1.md - What happens in the short run if there is a  positive demand shock? (extra slide)
+
+In a recession, output increases a lot and inflation is low  
+
+• In a recession, lots of spare capacity. Firms hire more workers (make workers work  overtime) and run machines for longer hours to meet higher demand. Since there is  spare capacity wages and input good prices do not increase much; i.e. no or small  increase of the marginal cost.  
+
+• Firms do not increase prices by much  
+
+In a boom, output increases a little (or not at all) and inflation is high  
+
+• The smaller the spare capacity is (the lower unemployment is), the more firms  respond by increasing prices rather than by increasing output since it’s hard to find  new workers to employ and all workers work overtime, thereby demanding higher  wages. Similarly machines are used at full capacity. Also commodity and other  input goods’ prices increase in a boom. i.e. the marginal cost will increase.  
+
+….Therefore, expansion ary monetary  policy (or positive demand shocks in  general) increase real output in the short run if the economy is in a recession – i.e.  there are real effects of monetary policy on the economy

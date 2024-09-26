@@ -1,0 +1,19 @@
+lecture_4_exchange_rates.md - supply=demand
+
+• Some governments intervene in exchange rate markets to decrease the volatility  of their exchange rate and prevent their currency from appreciating  
+
+Example: yen/dollar  
+
+¥/\$   – yen per one dollar 𝑒𝑒  
+
+In order to depreciate the yen, the government “prints” yen and purchases  dollars – increases the supply of yen and increases the demand for dollars (US  government debt)  
+
+• China and Japan – the two main holders of US Treasure Bonds due to currency  market interventions  
+
+Exchange Rates and International  Finance Lecture: Overview  
+
+A. Nominal Exchange Rates  
+
+B. Uncovered Interest Rate Parity (UIRP)   (Law of One Price in Financial Markets)  
+
+C. Real Exchange Rates and Purchasing Power Parity  (Law of One Price in Goods Markets)

@@ -1,0 +1,3 @@
+lecture_3_fiscal_policy.md - Reinhart and Rogoff “This Time is Different”
+
+![The graph depicts public debt as a percentage of GDP for 22 advanced economies from 1946 to 2009, highlighting median, average, and distribution of observations below and above 90%.](https://lblc.cc/21d55d8c080e674fc493cae08f096711c64c495ea97c83685d2e13af27351db1.jpg)

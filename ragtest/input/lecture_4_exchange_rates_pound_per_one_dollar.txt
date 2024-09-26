@@ -1,0 +1,3 @@
+lecture_4_exchange_rates.md - Pound per one Dollar
+
+![The graph shows the exchange rate of GBP to USD from January 2000 to January 2020, featuring fluctuations in value with notable spikes and drops indicated by vertical lines.](https://lblc.cc/85c47c0f28143867b6323affe11427bf138e347525d552765c6506b6baa85398.jpg)

@@ -1,0 +1,9 @@
+lecture_1_monetary_policy_part_1.md - i = [r +  π∗]  + a \*( π  –  π∗ ) + b\*(output gap)
+
+i  is the target nominal rate (for example FED Funds rate in the  US)  
+
+•  π  and  π∗  are the realized and target inflation rates     r  is the target real rate (determined by potential real GDP)  
+
+a&gt;0  and  b&gt;0  are parameters which capture how much the CB  cares about inflation stability and the output gap  
+
+The higher  a  is relative to  b , the more the CB cares about  inflation stability relative to the  output gap

@@ -1,0 +1,11 @@
+lecture_1_monetary_policy_part_1.md - The Taylor Rule
+
+Ben Bernanke and John Taylor – Two competing specifications  lead to two completely different interpretations  (see “ The Taylor  Rule: A benchmark for monetary policy? ” by Ben Bernanke, 2015)  
+
+![The image features a middle-aged man with gray hair and glasses, wearing a suit and tie, posing in front of a green flag with a state emblem.](https://lblc.cc/2d8352806d2d3a7571fa81b6d97304347ad63b60794a739307171f768b394de5.jpg) 
+
+![The image features a man with a gray beard, dressed in a suit and tie, standing in front of a dark, marbled background. He appears confident and approachable.](https://lblc.cc/5aa3efd91f6ce6cba3f4505338acc74a235b7943f9369c4f63ef7d5f8197642f.jpg) 
+
+i = 2+2 + 1.5 *( GDP Deflator Inflation – 2 )  +  0.5 *(output gap)  
+
+i = 2+2 + 1.5 *( core CPI Inflation –  2 )  + 1*(output gap)

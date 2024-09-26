@@ -1,0 +1,3 @@
+lecture_4_exchange_rates.md - Euros per one Dollar
+
+![The graph depicts the EUR/USD exchange rate from January 2000 to January 2020, showing fluctuations in currency value over time, with marked events highlighted.](https://lblc.cc/150cb07b23e03fd745c8130560f89bc39173e8bf9a7686b4094c8705eb99d101.jpg)

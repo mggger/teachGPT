@@ -1,0 +1,19 @@
+lecture_4_exchange_rates.md - Does UIRP work? --- Testing Hypothesis 1
+
+$$
+\Delta s_{t+1}^{i,\oint}=\alpha+\beta\left(i_{t}^{j}-i_{t}^{\oint}\right)+\epsilon_{t+1}^{1}
+$$  
+
+$s_{t+1}^{i,\mathbb{S}}$   $i$
+
+![The image displays a table reporting statistical results for various currencies, including coefficients, standard errors, sample sizes (N), R-squared values, and root mean square errors (RMSE).](https://lblc.cc/a3ae929f6161fd7c2c2f1f4aaf248d04a712ac84f63a9d6e580b33dd8f63babb.jpg) 
+
+• Quarterly Data
+
+• Currencies with higher interest rate, on average, appreciate rather than depreciate for many currency pairs – regression coefficients are negative rather than 1 (violates UIRP)
+
+• Results not statistically significant
+
+• Almost none of the exchange rate variation explained by period t interest rate differentials (low  $\mathsf{R}^{\wedge}2$  )
+
+• Source: Stavrakeva and Tang (2015)

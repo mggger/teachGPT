@@ -1,0 +1,7 @@
+lecture_3_fiscal_policy.md - Sustainable Debt
+
+![The image displays two mathematical equations involving variables related to financial dynamics, represented in a clear and structured format with red text on a green background.](https://lblc.cc/1206c2b65d8f6e5bb439c1f2156843fe38156726b7e0b656c85f01e4dc2432db.jpg) 
+
+•  If                 , stabilizing the public debt to  GDP requires running primary surpluses  
+
+•  If                 ,  one can run primary deficits and  still keep the debt to GDP on a sustainable path

@@ -1,0 +1,7 @@
+lecture_2_monetary_policy_part_2.md - Summary:  Implementation of  Unconventional Monetary Policy -- QE
+
+•  QE is the purchases of long-term bonds and assets (primarily  government bonds) by the CB which increases the demand for  these assets, lowers their yields/increases their prices  
+
+•  However, as there are many other sources of supply and demand  for these long-term assets, it is hard for CBs to try to target the  long-term interest rate directly (as it was the case for short term  rates such as interbank market rates), which is why they chose to  target the quantity of long-term assets they purchased (i.e. they  target the size of the CB’s balance sheet)  
+
+•  In that sense, QE is a much less precise instrument than  conventional MP as the interest rate is what matters for credit  demand

@@ -1,0 +1,3 @@
+lecture_3_fiscal_policy.md - Sovereign Debt Sustainability
+
+![The image shows a time series graph of the US Federal S (in blue) over decades, with a red line representing fitted values, indicating a general downward trend since the 1940s.](https://lblc.cc/d9e5cee650936448706eed16bc43590af83fc266607b045f0f793a3ec9918cb0.jpg)

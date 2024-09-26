@@ -1,0 +1,7 @@
+lecture_3_fiscal_policy.md - Definition of Fiscal Deficit/Surplus
+
+•  Primary fiscal deficit =  expenditures - tax  revenue =  G-T  
+
+•  Primary fiscal surplus = - Primary fiscal deficit  
+
+•  General fiscal  deficit = Interest payment on  debt + Primary fiscal  deficit =  iD+(G-T)

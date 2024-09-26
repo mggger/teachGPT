@@ -1,0 +1,5 @@
+lecture_2_monetary_policy_part_2.md - “Portfolio-Rebalancing”/ “Reaching for yield”  channel
+
+• By purchasing government bonds, the CB bids up prices/lowers the yields of government  debt. Investors chase higher yields (“reach for yield”) and invest into the next safest asset  class such as AAA corporates, which lowers the yield on AAA corporate debt making it  cheaper for safe corporates to issue debt and invest; Investors who used to hold AAA  corporate debt move to junk bonds or equity etc --- thus this portfolio rebalancing effect  makes the government debt CB purchases indirectly affect the prices of all asset classes.
+
+• CBs also directly purchased AAA corporate debt which stimulated the economy in a  similar fashion.

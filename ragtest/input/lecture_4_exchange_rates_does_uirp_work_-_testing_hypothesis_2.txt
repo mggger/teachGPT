@@ -1,0 +1,5 @@
+lecture_4_exchange_rates.md - Does UIRP work? - Testing Hypothesis 2
+
+Realized return from long Australian dollar / short US dollar carry (returns are in  percentages)  
+
+![The graph depicts the realized returns from a long AUD/short USD carry strategy from 1990 to 2015, showing significant fluctuations around a horizontal red line indicating zero return.](https://lblc.cc/2ded67cec2802057d29a7bb83f7a02c4b9e5b276bed5c15a7f2f30ea52493819.jpg)
