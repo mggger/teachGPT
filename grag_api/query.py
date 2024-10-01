@@ -129,7 +129,7 @@ class GraphRAGQuerier:
                 return True
         return False
 
-    async def query(self, question, callbacks=[], system_prompt=LOCAL_SEARCH_SYSTEM_PROMPT):
+    async def query(self, question, conversation_history=[], callbacks=[], system_prompt=LOCAL_SEARCH_SYSTEM_PROMPT):
         data_reloaded = self.check_and_reload_data()
         if data_reloaded or self.search_engine is None:
             llm_instance, token_encoder, text_embedder = self.setup_llm_and_embeddings()
@@ -140,5 +140,5 @@ class GraphRAGQuerier:
 
         self.search_engine.callbacks = callbacks
         self.search_engine.system_prompt = system_prompt
-        result = await self.search_engine.asearch(question)
+        result = await self.search_engine.asearch(question, conversation_history=conversation_history)
         return result

@@ -86,8 +86,13 @@ By default, all relevant images and tables should be displayed without requiring
 grag = GraphRAG()
 def load_chat_page():
     st.title("AI Teacher Assistant Chatbot")
-    if "messages" not in st.session_state or st.sidebar.button("Clear message history"):
-        st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
+    st.session_state.messages = [{"role": "assistant", "content": "How can I help you?"}]
+    if "conversation_history" not in st.session_state:
+        st.session_state.conversation_history = []
+
+    if st.sidebar.button("Clear conversation history"):
+        st.session_state.messages = [{"role": "assistant", "content": "How can I help you?"}]
+        st.session_state.conversation_history = []
 
     # Display chat history
     for msg in st.session_state.messages:
@@ -100,11 +105,17 @@ def load_chat_page():
         st.session_state.messages.append({"role": "user", "content": user_query})
         st.chat_message("user").write(user_query)
 
+        st.session_state.conversation_history.append({"role": "user", "content": user_query})
+
+
         with st.chat_message("assistant"):
             streamlit_callback = StreamlitLLMCallback()
 
             async def perform_search():
-                res = await grag.aquery(user_query, system_prompt=TEACHER_AI_SYSTEM_PROMPT, callbacks=[streamlit_callback])
+                res = await grag.aquery(user_query,
+                                        system_prompt=TEACHER_AI_SYSTEM_PROMPT,
+                                        callbacks=[streamlit_callback],
+                                        conversation_history=st.session_state.conversation_history)
                 return res
 
             with st.spinner("Searching for an answer..."):
@@ -112,6 +123,7 @@ def load_chat_page():
 
             response = result.response
             st.session_state.messages.append({"role": "assistant", "content": response})
+            st.session_state.conversation_history.append({"role": "assistant", "content": response})
 
 def load_file_management_page():
     st.title("File Management")
