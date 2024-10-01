@@ -1,6 +1,7 @@
 import csv
 import io
 
+from graphrag.query.context_builder.conversation_history import ConversationHistory, ConversationRole
 from streamlit_option_menu import option_menu
 
 from callback import StreamlitLLMCallback
@@ -84,15 +85,22 @@ By default, all relevant images and tables should be displayed without requiring
 
 
 grag = GraphRAG()
+
+
 def load_chat_page():
     st.title("AI Teacher Assistant Chatbot")
-    st.session_state.messages = [{"role": "assistant", "content": "How can I help you?"}]
-    if "conversation_history" not in st.session_state:
-        st.session_state.conversation_history = []
 
+    # Initialize conversation history
+    if "messages" not in st.session_state:
+        st.session_state.messages = [{"role": "assistant", "content": "How can I help you?"}]
+
+    if "conversation_history" not in st.session_state:
+        st.session_state.conversation_history = ConversationHistory()
+
+    # Clear history button
     if st.sidebar.button("Clear conversation history"):
         st.session_state.messages = [{"role": "assistant", "content": "How can I help you?"}]
-        st.session_state.conversation_history = []
+        st.session_state.conversation_history = ConversationHistory()
 
     # Display chat history
     for msg in st.session_state.messages:
@@ -105,17 +113,19 @@ def load_chat_page():
         st.session_state.messages.append({"role": "user", "content": user_query})
         st.chat_message("user").write(user_query)
 
-        st.session_state.conversation_history.append({"role": "user", "content": user_query})
-
+        # Add user query to conversation history
+        st.session_state.conversation_history.add_turn(ConversationRole.USER, user_query)
 
         with st.chat_message("assistant"):
             streamlit_callback = StreamlitLLMCallback()
 
             async def perform_search():
-                res = await grag.aquery(user_query,
-                                        system_prompt=TEACHER_AI_SYSTEM_PROMPT,
-                                        callbacks=[streamlit_callback],
-                                        conversation_history=st.session_state.conversation_history)
+                res = await grag.aquery(
+                    user_query,
+                    system_prompt=TEACHER_AI_SYSTEM_PROMPT,
+                    callbacks=[streamlit_callback],
+                    conversation_history=st.session_state.conversation_history
+                )
                 return res
 
             with st.spinner("Searching for an answer..."):
@@ -123,7 +133,20 @@ def load_chat_page():
 
             response = result.response
             st.session_state.messages.append({"role": "assistant", "content": response})
-            st.session_state.conversation_history.append({"role": "assistant", "content": response})
+
+            # Add assistant response to conversation history
+            st.session_state.conversation_history.add_turn(ConversationRole.ASSISTANT, response)
+
+    # Optionally, limit conversation history to last 5 turns
+    qa_turns = st.session_state.conversation_history.to_qa_turns()
+    if len(qa_turns) > 5:
+        new_history = ConversationHistory()
+        for turn in qa_turns[-5:]:
+            new_history.add_turn(ConversationRole.USER, turn.user_query.content)
+            if turn.assistant_answers:
+                for answer in turn.assistant_answers:
+                    new_history.add_turn(ConversationRole.ASSISTANT, answer.content)
+        st.session_state.conversation_history = new_history
 
 def load_file_management_page():
     st.title("File Management")
