@@ -7,7 +7,7 @@ from graphrag.query.llm.oai.chat_openai import ChatOpenAI
 from graphrag.query.llm.oai.embedding import OpenAIEmbedding
 from graphrag.query.input.loaders import dfs
 from graphrag.query.structured_search.local_search.mixed_context import LocalSearchMixedContext
-from graphrag.query.structured_search.local_search.search import LocalSearch
+from grag_api.custom_search import LocalSearch
 from graphrag.query.structured_search.local_search.system_prompt import LOCAL_SEARCH_SYSTEM_PROMPT
 from graphrag.vector_stores import LanceDBVectorStore
 

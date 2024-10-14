@@ -231,15 +231,15 @@ def load_chat_page():
             st.session_state.conversation_history.add_turn(ConversationRole.ASSISTANT, response)
 
     # Optionally, limit conversation history to last 5 turns
-    qa_turns = st.session_state.conversation_history.to_qa_turns()
-    if len(qa_turns) > 5:
-        new_history = ConversationHistory()
-        for turn in qa_turns[-5:]:
-            new_history.add_turn(ConversationRole.USER, turn.user_query.content)
-            if turn.assistant_answers:
-                for answer in turn.assistant_answers:
-                    new_history.add_turn(ConversationRole.ASSISTANT, answer.content)
-        st.session_state.conversation_history = new_history
+    # qa_turns = st.session_state.conversation_history.to_qa_turns()
+    # if len(qa_turns) > 5:
+    #     new_history = ConversationHistory()
+    #     for turn in qa_turns[-5:]:
+    #         new_history.add_turn(ConversationRole.USER, turn.user_query.content)
+    #         if turn.assistant_answers:
+    #             for answer in turn.assistant_answers:
+    #                 new_history.add_turn(ConversationRole.ASSISTANT, answer.content)
+    #     st.session_state.conversation_history = new_history
 
 def load_file_management_page():
     st.title("File Management")
