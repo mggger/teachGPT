@@ -22,8 +22,6 @@ from graphrag.query.structured_search.local_search.system_prompt import (
     LOCAL_SEARCH_SYSTEM_PROMPT,
 )
 
-from langsmith.run_helpers import traceable
-
 DEFAULT_LLM_PARAMS = {
     "max_tokens": 1500,
     "temperature": 0.0,
@@ -194,11 +192,6 @@ class LocalSearch(BaseSearch):
                 prompt_tokens=num_tokens(search_prompt, self.token_encoder),
             )
 
-    @traceable(
-        run_type="chain",
-        name="call llm",
-        tags=["graphrag"]
-    )
     async def acall_llm(self, search_messages, callbacks, params):
         response = await self.llm.agenerate(
             messages=search_messages,
